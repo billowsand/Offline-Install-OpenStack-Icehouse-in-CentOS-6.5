@@ -31,7 +31,7 @@ Table of Contents
 概述
 ==============
 
-这是一个可以提供测试或者实验的手册，可以在虚拟机和物理机上使用，本指南将不再提供虚拟机使用方面的指导，仅仅叙述安装过程。安装过程将在一台双网卡的机器上安装OpenStack的组建。如果需要将服务运行在多个节点就更改对应服务里的IP设置即可
+这是一个可以提供测试或者实验的手册，可以在虚拟机和物理机上使用，本指南将不再提供虚拟机使用方面的指导，仅仅叙述安装过程。安装过程将在一台双网卡的机器上安装OpenStack的组建。如果需要将服务运行在多个节点就更改对应服务里的IP设置即可。
 
 
 安装需求
@@ -40,15 +40,46 @@ Table of Contents
 系统准备
 -----------------
 
-# 下载CentOS 6.5 镜像 <http://mirrors.163.com/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso>
-# 安装时选择\ *Virtualization Host*\，同时勾选\ *custom_now*\ ,选择\ *Virtualization*\ 的全部安装包
+* 下载CentOS 6.5 镜像 <http://mirrors.163.com/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso>
+* 安装时选择\ *Virtualization Host*\，同时勾选\ *custom_now*\ ,选择\ *Virtualization*\ 的全部安装包
 
 
 
 网络准备
 -------------------
 
-对于很多机器的网卡名称不一样
+对于很多机器的网卡名称不一样，为此需要统一网卡名称，进入::
+ 
+ vim /etc/udev/rules.d/70-persistent-net.rules
+ #修改网卡名称,仅仅需要修改NAME
+ SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="你的网卡地址", ATTR{type}=="1", KERNEL=="eth*", NAME="eth1"
+
+ 
+ SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="你的网卡地址", ATTR{type}=="1", KERNEL=="eth*", NAME="eth0"
+
+在network中添加网卡::
+ 
+ vim /etc/sysconfig/network-scripts/ifcfg-eth1
+
+ ＃配置如下
+ DEVICE=eth0
+ TYPE=Ethernet
+ ONBOOT=yes
+ NM_CONTROLLED=no
+ BOOTPROTO=static
+ IPADDR=192.168.138.77
+ NETMASK=255.255.255.0
+
+::
+ 
+ vim /etc/sysconfig/network-scripts/ifcfg-eth0
+ DEVICE=eth1
+ TYPE=Ethernet
+ ONBOOT=yes
+ NM_CONTROLLED=no
+ BOOTPROTO=static
+ 
+
 
 :Node Role: NICs
 :Allinone Node: eth0 (192.168.137.66), eth1 (192.168.137.77)
@@ -83,10 +114,6 @@ OpenVSwich 包下载::
  wget hlhjkh
 
 
-
-**Note 1:** Always use dpkg -s <packagename> to make sure you are using grizzly packages (version : 2013.1)
-
-**Note 2:** This is my current network architecture, you can add as many compute node as you wish.
 
 2. Controller Node
 ===============
