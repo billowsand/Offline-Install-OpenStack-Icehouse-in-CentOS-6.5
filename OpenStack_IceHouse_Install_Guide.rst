@@ -1,27 +1,16 @@
 ==========================================================
-  OpenStack Grizzly Install Guide
+  OpenStack Icehouse 安装指南
 ==========================================================
 
-:Version: 2.0
-:Source: https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide
-:Keywords: Multi node, Grizzly, Quantum, Nova, Keystone, Glance, Horizon, Cinder, OpenVSwitch, KVM, Ubuntu Server 12.04/13.04 (64 bits).
+:Version: 1.0
+:Source: https://github.com/billowsand/Offline-Install-OpenStack-Icehouse-in-CentOS-6.5/blob/master/OpenStack_IceHouse_Install_Guide.rst
+:Keywords: Multi node, Single node,Icehouse, Neutron, Nova, Keystone, Glance, Horizon, OpenVSwitch, KVM, CentOS 6.5 (64 bits).
 
 Authors
 ==========
 
-`Bilel Msekni <http://www.linkedin.com/profile/view?id=136237741&trk=tab_pro>`_ 
+Siyang Li
 
-Contributors
-==========
-
-=================================================== =======================================================
-
- Houssem Medhioub <houssem.medhioub@it-sudparis.eu> Djamal Zeghlache <djamal.zeghlache@telecom-sudparis.eu>
- Sandeep Raman  <sandeepr@hp.com>                   Sam Stoelinga <sammiestoel@gmail.com>
- Anil Vishnoi <vishnoianil@gmail.com>               Gangur Hrushikesh <>
-=================================================== =======================================================
-
-Wana contribute ? Read the guide, send your contribution and get your name listed ;)
 
 Table of Contents
 =================
@@ -39,30 +28,32 @@ Table of Contents
   8. Credits
   9. To do
 
-0. What is it?
+0. 概述
 ==============
 
-OpenStack Grizzly Install Guide is an easy and tested way to create your own OpenStack platform. 
-
-If you like it, don't forget to star it !
-
-Status: Stable
+这是一个可以提供测试或者实验的手册，可以在虚拟机和物理机上使用，本指南将不再提供虚拟机使用方面的指导，仅仅叙述安装过程。安装过程将在一台双网卡的机器上安装OpenStack的组建。如果需要将服务运行在多个节点就更改对应服务里的IP设置即可
 
 
-1. Requirements
+1.  安装需求
 ====================
 
-:Node Role: NICs
-:Control Node: eth0 (10.10.10.51), eth1 (192.168.100.51)
-:Network Node: eth0 (10.10.10.52), eth1 (10.20.20.52), eth2 (192.168.100.52)
-:Compute Node: eth0 (10.10.10.53), eth1 (10.20.20.53)
+1.1 系统安装
+* 下载CentOS 6.5 镜像 ::
+
+下载地址：http://mirrors.163.com/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso
+
+1.2 网络准备
+-------------------
+
+* 对于很多机器的网卡名称不一样
+:节点: 网卡1，网卡2
+:All in one Node: eth0 (192.168.137.66)，eth1 (192.168.138.77)
 
 **Note 1:** Always use dpkg -s <packagename> to make sure you are using grizzly packages (version : 2013.1)
 
 **Note 2:** This is my current network architecture, you can add as many compute node as you wish.
 
-.. image:: http://i.imgur.com/Frsughe.jpg
-
+1.1
 2. Controller Node
 ===============
 
