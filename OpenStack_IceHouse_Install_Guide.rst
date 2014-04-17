@@ -2,9 +2,9 @@
   OpenStack Icehouse 安装指南
 ==========================================================
 
-:Version: 1.0
-:Source: https://github.com/billowsand/Offline-Install-OpenStack-Icehouse-in-CentOS-6.5/blob/master/OpenStack_IceHouse_Install_Guide.rst
-:Keywords: Multi node, Single node,Icehouse, Neutron, Nova, Keystone, Glance, Horizon, OpenVSwitch, KVM, CentOS 6.5 (64 bits).
+:版本: 1.0
+:源代码: https://github.com/billowsand/Offline-Install-OpenStack-Icehouse-in-CentOS-6.5/blob/master/OpenStack_IceHouse_Install_Guide.rst
+:关键字: Multi node, Single node,Icehouse, Neutron, Nova, Keystone, Glance, Horizon, OpenVSwitch, KVM, CentOS 6.5 (64 bits).
 
 作者
 ==========
@@ -12,25 +12,25 @@
 烂漫的山鼠
 
 
-Table of Contents
+目录
 =================
 
 ::
 
-概述
-安装需求
-安装前系统配置
-安装Keystone
-安装Glance
-安装Nova
-安装Neutron
-启动Nova和Neutron
-在Dashboard中使用OpenStack（未完成）
+ 概述
+ 安装需求
+ 安装前系统配置
+ 安装Keystone
+ 安装Glance
+ 安装Nova
+ 安装Neutron
+ 启动Nova和Neutron
+ 在Dashboard中使用OpenStack（未完成）
 
 概述
 ==============
 
-这是一个可以提供测试或者实验的手册，可以在虚拟机和物理机上使用，本指南将不再提供虚拟机使用方面的指导，仅仅叙述安装过程。安装过程将在一台双网卡的机器上安装OpenStack的组建。如果需要将服务运行在多个节点就更改对应服务里的IP设置即可。
+这是一个可以提供测试或者实验的手册，可以在虚拟机和物理机上使用，本指南将不再提供虚拟机使用方面的指导，仅仅叙述安装过程。安装过程将在一台双网卡的机器上安装OpenStack中的Keysotn，Glance，nova和Neutron组件。如果需要将服务运行在多个节点就更改对应服务里的IP设置即可。
 
 
 安装需求
