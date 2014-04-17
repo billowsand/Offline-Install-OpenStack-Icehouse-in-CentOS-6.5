@@ -40,9 +40,9 @@ Table of Contents
 1.1 系统安装
 -----------------
 
-* 下载CentOS 6.5 镜像 :: 
+下载CentOS 6.5 镜像 :: 
 
-  下载地址：http://mirrors.163.com/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso
+  cm下载地址：http://mirrors.163.com/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso
 
 
 1.2 网络准备
