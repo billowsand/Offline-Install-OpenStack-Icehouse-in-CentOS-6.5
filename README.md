@@ -1,4 +1,4 @@
-OpenStack-Grizzly-Install-Guide
+OpenStack Icehouse 离线安装指南
 ===============================
 
 You want to install OpenStack Grizzly and you don't know how ?
