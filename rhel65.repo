@@ -1,0 +1,7 @@
+[base] 
+name=Base
+baseurl=http://192.168.137.66/centos65
+gpgcheck=1 
+enabled=1
+gpgkey=http://192.168.137.66/centos65/RPM-GPG-KEY-CentOS-6
+

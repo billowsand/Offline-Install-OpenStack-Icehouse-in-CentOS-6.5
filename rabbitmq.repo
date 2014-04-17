@@ -1,0 +1,6 @@
+[rabbitmq]
+name=rabbitmq
+baseurl=http://192.168.137.66/rabbitmq
+enabled=1
+gpgcheck=1
+gpgkey=http://192.168.137.66/rabbitmq/RPM-GPG-KEY-EPEL-6

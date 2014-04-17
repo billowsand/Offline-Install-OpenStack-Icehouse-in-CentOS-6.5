@@ -1,0 +1,6 @@
+[epel]
+name=epel
+baseurl=http://192.168.137.66/epel-depends
+enabled=1
+gpgcheck=0
+gpgkey=http://192.168.137.66/epel-depends/RPM-GPG-KEY-EPEL-6
