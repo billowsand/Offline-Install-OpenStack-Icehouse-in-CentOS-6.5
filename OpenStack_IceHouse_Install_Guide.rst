@@ -28,29 +28,54 @@ Table of Contents
   8. Credits
   9. To do
 
-0. 概述
+概述
 ==============
 
 这是一个可以提供测试或者实验的手册，可以在虚拟机和物理机上使用，本指南将不再提供虚拟机使用方面的指导，仅仅叙述安装过程。安装过程将在一台双网卡的机器上安装OpenStack的组建。如果需要将服务运行在多个节点就更改对应服务里的IP设置即可
 
 
-1.  安装需求
+安装需求
 ====================
 
-1.1 系统安装
+系统准备
 -----------------
 
-* 下载CentOS 6.5 镜像 <http://mirrors.163.com/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso>
+#下载CentOS 6.5 镜像 <http://mirrors.163.com/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso>
+#安装时选择*Virtualization Host*，同时勾选*custom_now*,选择*Virtualization*的全部安装包
 
 
-1.2 网络准备
+
+网络准备
 -------------------
 
-* 对于很多机器的网卡名称不一样
+对于很多机器的网卡名称不一样
 
 :Node Role: NICs
-:All in Node: eth0 (192.168.137.66), eth1 (192.168.137.77)
+:All in one Node: eth0 (192.168.137.66), eth1 (192.168.137.77)
 :Compute Node: eth0 (192.168.137.67), eth1 (192.168.137.78)
+
+离线安装包准备
+-----------------------
+
+rdo 包下载::
+ 
+ wget -S http://rdo.fedorapeople.org/openstack/openstack-havana/rdo-release-havana.rpm
+ wget -S -c -r -np -L http://repos.fedorapeople.org/repos/openstack/openstack-icehouse/epel-6/
+
+
+epel 包下载::
+
+ wget -S -c -r -np -Lhttp://dl.fedoraproject.org/pub/epel/6/x86_64/
+
+RabbitMQ 包下载::
+ wget
+
+OpenVSwich 包下载::
+ wget
+
+测试镜像下载::
+ wget
+
 
 
 **Note 1:** Always use dpkg -s <packagename> to make sure you are using grizzly packages (version : 2013.1)
