@@ -51,7 +51,7 @@ Table of Contents
 对于很多机器的网卡名称不一样
 
 :Node Role: NICs
-:All in one Node: eth0 (192.168.137.66), eth1 (192.168.137.77)
+:Allinone Node: eth0 (192.168.137.66), eth1 (192.168.137.77)
 :Compute Node: eth0 (192.168.137.67), eth1 (192.168.137.78)
 
 离线安装包准备
@@ -67,11 +67,14 @@ epel 包下载::
 
  wget -S -c -r -np -Lhttp://dl.fedoraproject.org/pub/epel/6/x86_64/
 
+
 RabbitMQ 包下载::
  wget
 
+
 OpenVSwich 包下载::
  wget
+
 
 测试镜像下载::
  wget
