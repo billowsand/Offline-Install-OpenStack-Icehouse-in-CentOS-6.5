@@ -38,22 +38,23 @@ Table of Contents
 ====================
 
 1.1 系统安装
+-----------------
 * 下载CentOS 6.5 镜像 ::
+  ：下载地址：http://mirrors.163.com/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso
 
-下载地址：http://mirrors.163.com/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso
 
 1.2 网络准备
 -------------------
 
 * 对于很多机器的网卡名称不一样
-:Node: 网卡1，网卡2
+
+:Node Role: 网卡1，网卡2
 :All in one Node: eth0 (192.168.137.66)，eth1 (192.168.138.77)
 
 **Note 1:** Always use dpkg -s <packagename> to make sure you are using grizzly packages (version : 2013.1)
 
 **Note 2:** This is my current network architecture, you can add as many compute node as you wish.
 
-1.1
 2. Controller Node
 ===============
 
