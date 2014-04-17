@@ -214,8 +214,7 @@ OpenVSwich 包下载::
 
  service httpd start
  chkconfig httpd on
-
-#检查是否可以访问
+ #检查是否可以访问
  curl http://192.168.138.77/rabbitmq/
 
 防火墙配置
@@ -291,7 +290,6 @@ OpenVSwich 包下载::
  
  chkconfig mysqld on
  /etc/init.d/mysqld start
-
  /usr/bin/mysqladmin -u root password 'openstack'
 
 
@@ -424,6 +422,7 @@ OpenVSwich 包下载::
  glance image-list
 
 上传测试镜像::
+
  glance image-create --name "cirros-0.3.1-x86_64" --disk-format qcow2 --container-format bare --is-public true --file cirros-0.3.1-x86_64-disk.img 
  glance image-list
 
@@ -451,11 +450,11 @@ OpenVSwich 包下载::
     #}
  
  #打开下面几行的注释
-         CACHES = {
-             'default': {
-                 'BACKEND' : 'django.core.cache.backends.memcached.MemcachedCache',
-                 'LOCATION' : '127.0.0.1:11211',
-             }
+ CACHES = {
+      'default': {
+          'BACKEND' : 'django.core.cache.backends.memcached.MemcachedCache',
+          'LOCATION' : '127.0.0.1:11211',
+       }
  }
  
  #修改如下几行
@@ -593,12 +592,6 @@ OpenVSwich 包下载::
  openstack-config --set  /etc/neutron/neutron.conf  database   connection  mysql://neutron:neutron@192.168.138.77/neutron
  openstack-config --set  /etc/neutron/neutron.conf  DEFAULT  allow_overlapping_ips True
 
-chkconfig neutron-server on
-chkconfig neutron-openvswitch-agent on
-chkconfig neutron-dhcp-agent on
-chkconfig neutron-l3-agent on
-chkconfig  neutron-metadata-agent  on
-
 配置Neutron openvswitch agent::
    
  ln -s /etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini /etc/neutron/plugin.ini
@@ -682,6 +675,7 @@ chkconfig  neutron-metadata-agent  on
 
 
 启动nova::
+ 
  service openstack-nova-conductor start
  service openstack-nova-api start
  service openstack-nova-scheduler start
@@ -718,3 +712,6 @@ chkconfig  neutron-metadata-agent  on
 运行没有报错即可，如果报错，重新同步nova和Nuetron数据库::
  
  neutron net-list
+
+在Dashboard中使用OpenStack
+========================
