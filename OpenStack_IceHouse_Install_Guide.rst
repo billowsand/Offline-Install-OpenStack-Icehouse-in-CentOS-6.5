@@ -69,15 +69,15 @@ epel 包下载::
 
 
 RabbitMQ 包下载::
- wget
+ wget khlkh
 
 
 OpenVSwich 包下载::
- wget
+ wget gohk
 
 
 测试镜像下载::
- wget
+ wget hlhjkh
 
 
 
