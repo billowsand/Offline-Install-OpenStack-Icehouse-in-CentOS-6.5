@@ -41,7 +41,7 @@ Table of Contents
 -----------------
 
 #下载CentOS 6.5 镜像 <http://mirrors.163.com/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso>
-#安装时选择*Virtualization Host*，同时勾选*custom_now*,选择*Virtualization*的全部安装包
+#安装时选择\ *Virtualization Host*\，同时勾选\ *custom_now*\ ,选择\ *Virtualization*\ 的全部安装包
 
 
 
