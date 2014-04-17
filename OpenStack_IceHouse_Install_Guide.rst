@@ -50,9 +50,8 @@ Table of Contents
 
 * 对于很多机器的网卡名称不一样
 
-:Node Role: 网卡1，网卡2 
-
-:All in one Node: eth0 (192.168.137.66)，eth1 (192.168.138.77)
+:Node Role: nic1,nic2 
+:All in one Node: eth0 (192.168.137.66),eth1 (192.168.138.77)
 
 **Note 1:** Always use dpkg -s <packagename> to make sure you are using grizzly packages (version : 2013.1)
 
