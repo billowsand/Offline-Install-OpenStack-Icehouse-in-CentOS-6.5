@@ -49,9 +49,9 @@ Table of Contents
 * 对于很多机器的网卡名称不一样
 
 :Node Role: NICs
-:All in Node: eth0 (10.10.10.51), eth1 (192.168.100.51)
-:Network Node: eth0 (10.10.10.52), eth1 (10.20.20.52), eth2 (192.168.100.52)
-:Compute Node: eth0 (10.10.10.53), eth1 (10.20.20.53)
+:All in Node: eth0 (192.168.137.66), eth1 (192.168.137.77)
+:Compute Node: eth0 (192.168.137.67), eth1 (192.168.137.78)
+
 
 **Note 1:** Always use dpkg -s <packagename> to make sure you are using grizzly packages (version : 2013.1)
 
