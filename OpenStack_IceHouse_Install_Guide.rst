@@ -6,10 +6,10 @@
 :Source: https://github.com/billowsand/Offline-Install-OpenStack-Icehouse-in-CentOS-6.5/blob/master/OpenStack_IceHouse_Install_Guide.rst
 :Keywords: Multi node, Single node,Icehouse, Neutron, Nova, Keystone, Glance, Horizon, OpenVSwitch, KVM, CentOS 6.5 (64 bits).
 
-Authors
+作者
 ==========
 
-Siyang Li
+烂漫的山鼠
 
 
 Table of Contents
@@ -17,16 +17,15 @@ Table of Contents
 
 ::
 
-  0. What is it?
-  1. Requirements
-  2. Controller Node
-  3. Network Node
-  4. Compute Node
-  5. Your first VM
-  6. Licensing
-  7. Contacts
-  8. Credits
-  9. To do
+概述
+安装需求
+安装前系统配置
+安装Keystone
+安装Glance
+安装Nova
+安装Neutron
+启动Nova和Neutron
+在Dashboard中使用OpenStack（未完成）
 
 概述
 ==============
@@ -100,17 +99,17 @@ epel 包下载::
 
 RabbitMQ 包下载::
 
- wget khlkh
+ wget 暂时无提供
 
 
 OpenVSwich 包下载::
 
- wget gohk
+ wget 暂时无提供
 
 
 测试镜像下载::
 
- wget hlhjkh
+ wget 暂时无提供
 
 
 
