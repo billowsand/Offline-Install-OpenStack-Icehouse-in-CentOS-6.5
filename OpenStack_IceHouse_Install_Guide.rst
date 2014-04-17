@@ -49,7 +49,7 @@ Table of Contents
 * 对于很多机器的网卡名称不一样
 
 :Node Role: NICs
-:Control Node: eth0 (10.10.10.51), eth1 (192.168.100.51)
+:All in Node: eth0 (10.10.10.51), eth1 (192.168.100.51)
 :Network Node: eth0 (10.10.10.52), eth1 (10.20.20.52), eth2 (192.168.100.52)
 :Compute Node: eth0 (10.10.10.53), eth1 (10.20.20.53)
 
