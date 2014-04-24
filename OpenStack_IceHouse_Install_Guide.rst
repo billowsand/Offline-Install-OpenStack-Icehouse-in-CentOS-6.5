@@ -9,7 +9,7 @@
 作者
 ==========
 
-烂漫的山鼠
+:烂漫的山鼠: billowsand@gmail.com
 
 
 目录
@@ -525,7 +525,7 @@ OpenVSwich 包下载::
  openstack-config --set /etc/nova/nova.conf DEFAULT novncproxy_base_url http://192.168.138.77:6080/vnc_auto.html;
  openstack-config --set /etc/nova/nova.conf DEFAULT auth_strategy keystone;
  openstack-config --set /etc/nova/nova.conf DEFAULT rpc_backend nova.openstack.common.rpc.impl_kombu;
- openstack-config --set /etc/nova/nova.conf DEFAULT glance_host 192.168.3.233;
+ openstack-config --set /etc/nova/nova.conf DEFAULT glance_host 192.168.137.231
  openstack-config --set /etc/nova/nova.conf DEFAULT api_paste_config /etc/nova/api-paste.ini;
  openstack-config --set /etc/nova/nova.conf keystone_authtoken auth_host 192.168.138.77;
  openstack-config --set /etc/nova/nova.conf keystone_authtoken auth_port 5000;
@@ -714,3 +714,21 @@ OpenVSwich 包下载::
 
 在Dashboard中使用OpenStack
 ========================
+
+* 在浏览器中访问http://192.168.138.77/dashboard, 用户名admin，密码openstack
+
+
+错误排查
+========
+
+* 日志文件存放在::
+
+  nova: /var/log/nova
+  glance:/var/log/glance
+  neutron:/var/log/neutron
+
+* nova boot VIF creation fails::
+  
+  修改nova.conf文件
+  vif_plugging_timeout=10
+  vif_plugging_is_fatal=False
