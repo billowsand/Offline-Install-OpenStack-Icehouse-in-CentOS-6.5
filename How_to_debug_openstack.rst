@@ -233,4 +233,18 @@ DevStack的安装和配置
 
 在Eclipse下调试OpenStack
 =====================
+运行脚本停止服务::
+  
+  ./unstack.sh
 
+
+启动mysql和rabbitmq::
+
+  service rabbitmq-server start
+  service mysqld start
+
+* 在Eclipse中选择工作空间为\ **/opt/stack**\ 新建Python项目，项目名称和对应的项目名称一致，创建完成后会发现项目已经导入到eclipse中，并且显示git的分支为master。
+
+* 将在\ **/usr/bin**\ 中的对应的openstack程序导入到项目中，比如glance就导入glance-* 的有关项目，也可以通过查看项目根目录下的\ **setup.cfg** 查看此项目对应的程序的名称。
+
+* 对导入的运行项目在Eclipse中进行Debug。由于PDB不能和eventlet一起使用，使用后会导致线程切换出错，所以在每个项目中注释monkey_patch那一行。
