@@ -185,6 +185,7 @@
  baseurl=http://192.168.138.77/rabbitmq
  enabled=1
  gpgcheck=0
+ EOF
 
  cat > /etc/yum.repo.d/icehouse.repo<< EOF
  [openstack-icehouse]
@@ -192,7 +193,7 @@
  baseurl=http://192.168.137.66/openstack-icehouse
  enabled=1
  gpgcheck=0
-
+ EOF
 
 
 
