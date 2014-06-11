@@ -1,6 +1,0 @@
-[openstack-icehouse]
-name=openstack-icehouse
-baseurl=http://192.168.137.66/openstack-icehouse
-enabled=1
-gpgcheck=1
-gpgkey=http://192.168.137.66/openstack-icehouse/RPM-GPG-KEY-RDO-Icehouse
