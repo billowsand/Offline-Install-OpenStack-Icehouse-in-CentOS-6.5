@@ -2,7 +2,7 @@
   OpenStack Icehouse 安装指南
 ==========================================================
 
-:版本: 1.0
+:版本: 2.0
 :源代码: https://github.com/billowsand/Offline-Install-OpenStack-Icehouse-in-CentOS-6.5/blob/master/OpenStack_IceHouse_Install_Guide.rst
 :关键字: Multi node, Single node,Icehouse, Neutron, Nova, Keystone, Glance, Horizon, OpenVSwitch, KVM, CentOS 6.5 (64 bits).
 
@@ -194,7 +194,8 @@ OpenVSwich 包下载::
  cp -r openstack-icehouse/* /var/www/html/openstack-icehouse/
  mkdir /var/www/html/rabbitmq
  cp -r rabbitmq/* /var/www/html/rabbitmq/
- cp rdo-releas/RPM-GPG-KEY-RDO-Icehouse /var/www/html/openstack-icehouse
+ 
+ #cp rdo-releas/RPM-GPG-KEY-RDO-Icehouse /var/www/html/openstack-icehouse
 
 
 拷贝CentOS光盘源::
@@ -249,7 +250,6 @@ OpenVSwich 包下载::
 
 安装RabbitMQ软件::
  
- rpm --import /var/www/html/rabbitmq rabbitmq-signing-key-public.asc
  yum install rabbitmq-server
 
 在hosts中添加主机名称::
@@ -259,9 +259,9 @@ OpenVSwich 包下载::
  127.0.0.1   controller localhost.localdomain localhost4 localhost4.localdomain4
 
 
-建立plugin文件::
+开启rabbit management服务::
 
- echo "[rabbitmq_management].">/etc/rabbitmq/enabled_plugins
+ rabbitmq-plugins enable rabbitmq_management
 
 启动服务::
  
@@ -297,7 +297,6 @@ OpenVSwich 包下载::
 
 ::
  
- rpm  --import  /var/www/html/rdo-icehouse-b3RPM-GPG-KEY-RDO-Icehouse 
  yum install -y openstack-keystone  openstack-utils
 
 
