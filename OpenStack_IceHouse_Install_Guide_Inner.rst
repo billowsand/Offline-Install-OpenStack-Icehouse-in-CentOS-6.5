@@ -59,7 +59,7 @@
  vim /etc/sysconfig/network-scripts/ifcfg-eth1
 
  ＃配置如下
- DEVICE=eth0
+ DEVICE=eth1
  TYPE=Ethernet
  ONBOOT=yes
  NM_CONTROLLED=no
@@ -70,7 +70,7 @@
 ::
  
  vim /etc/sysconfig/network-scripts/ifcfg-eth0
- DEVICE=eth1
+ DEVICE=eth0
  TYPE=Ethernet
  ONBOOT=yes
  NM_CONTROLLED=no
@@ -191,7 +191,7 @@
  cat > /etc/yum.repos.d/icehouse.repo<< EOF
  [openstack-icehouse]
  name=openstack-icehouse
- baseurl=http://192.168.137.66/openstack-icehouse
+ baseurl=http://192.168.138.77/openstack-icehouse
  enabled=1
  gpgcheck=0
  EOF
@@ -297,13 +297,13 @@
 使用UUID认证::
  
  openstack-config --set /etc/keystone/keystone.conf DEFAULT admin_token $SERVICE_TOKEN
- openstack-config --set /etc/keystone/keystone.conf token provider keystone.token.providers.uuid.Provider;
- openstack-config --set /etc/keystone/keystone.conf sql connection mysql://keystone:keystone@192.168.138.77/keystone;
+ openstack-config --set /etc/keystone/keystone.conf token provider keystone.token.providers.uuid.Provider
+ openstack-config --set /etc/keystone/keystone.conf sql connection mysql://keystone:keystone@192.168.138.77/keystone
 
 
 同步数据::
  
- openstack-db --init --service keystone --password keystone --rootpw openstack;
+ openstack-db --init --service keystone --password keystone --rootpw openstack
 
 修改目录属性并启动服务::
  
@@ -383,12 +383,12 @@
  openstack-config --set /etc/glance/glance-registry.conf keystone_authtoken admin_tenant_name admin
  openstack-config --set /etc/glance/glance-registry.conf  keystone_authtoken admin_user admin
  openstack-config --set /etc/glance/glance-registry.conf  keystone_authtoken admin_password openstack
- openstack-config --set /etc/glance/glance-api.conf DEFAULT notifier_strategy noop;
+ openstack-config --set /etc/glance/glance-api.conf DEFAULT notifier_strategy noop
 
 
 配置Glance数据库::
  
- openstack-db --init --service glance --password glance --rootpw openstack;
+ openstack-db --init --service glance --password glance --rootpw openstack
 
 
 设置权限并启动服务::
@@ -449,7 +449,7 @@
 
 设置权限并启动服务::
  
- chown -R apache:apache /etc/openstack-dashboard/ /var/lib/openstack-dashboard/;
+ chown -R apache:apache /etc/openstack-dashboard/ /var/lib/openstack-dashboard/
  chkconfig httpd on 
  chkconfig memcached on
  service httpd start
@@ -503,27 +503,27 @@
 
 配置nova::
  
- openstack-config --set /etc/nova/nova.conf database connection mysql://nova:nova@192.168.138.77/nova;
- openstack-config --set /etc/nova/nova.conf DEFAULT rabbit_host 192.168.138.77;
- openstack-config --set /etc/nova/nova.conf DEFAULT my_ip 192.168.138.77;
- openstack-config --set /etc/nova/nova.conf DEFAULT vncserver_listen 0.0.0.0;
+ openstack-config --set /etc/nova/nova.conf database connection mysql://nova:nova@192.168.138.77/nova
+ openstack-config --set /etc/nova/nova.conf DEFAULT rabbit_host 192.168.138.77
+ openstack-config --set /etc/nova/nova.conf DEFAULT my_ip 192.168.138.77
+ openstack-config --set /etc/nova/nova.conf DEFAULT vncserver_listen 0.0.0.0
  openstack-config --set /etc/nova/nova.conf  DEFAULT vnc_enabled True
- openstack-config --set /etc/nova/nova.conf DEFAULT vncserver_proxyclient_address 192.168.138.77;
- openstack-config --set /etc/nova/nova.conf DEFAULT novncproxy_base_url http://192.168.138.77:6080/vnc_auto.html;
- openstack-config --set /etc/nova/nova.conf DEFAULT auth_strategy keystone;
- openstack-config --set /etc/nova/nova.conf DEFAULT rpc_backend nova.openstack.common.rpc.impl_kombu;
+ openstack-config --set /etc/nova/nova.conf DEFAULT vncserver_proxyclient_address 192.168.138.77
+ openstack-config --set /etc/nova/nova.conf DEFAULT novncproxy_base_url http://192.168.138.77:6080/vnc_auto.html
+ openstack-config --set /etc/nova/nova.conf DEFAULT auth_strategy keystone
+ openstack-config --set /etc/nova/nova.conf DEFAULT rpc_backend nova.openstack.common.rpc.impl_kombu
  openstack-config --set /etc/nova/nova.conf DEFAULT glance_host 192.168.137.231
- openstack-config --set /etc/nova/nova.conf DEFAULT api_paste_config /etc/nova/api-paste.ini;
- openstack-config --set /etc/nova/nova.conf keystone_authtoken auth_host 192.168.138.77;
- openstack-config --set /etc/nova/nova.conf keystone_authtoken auth_port 5000;
- openstack-config --set /etc/nova/nova.conf keystone_authtoken auth_protocol http;
- openstack-config --set /etc/nova/nova.conf keystone_authtoken auth_version v2.0;
- openstack-config --set /etc/nova/nova.conf keystone_authtoken admin_user admin;
- openstack-config --set /etc/nova/nova.conf keystone_authtoken admin_tenant_name admin;
- openstack-config --set /etc/nova/nova.conf keystone_authtoken admin_password openstack;
- openstack-config --set /etc/nova/nova.conf DEFAULT enabled_apis ec2,osapi_compute,metadata;
- openstack-config --set /etc/nova/nova.conf DEFAULT firewall_driver nova.virt.firewall.NoopFirewallDriver;
- openstack-config --set /etc/nova/nova.conf DEFAULT network_manager nova.network.neutron.manager.NeutronManager;
+ openstack-config --set /etc/nova/nova.conf DEFAULT api_paste_config /etc/nova/api-paste.ini
+ openstack-config --set /etc/nova/nova.conf keystone_authtoken auth_host 192.168.138.77
+ openstack-config --set /etc/nova/nova.conf keystone_authtoken auth_port 5000
+ openstack-config --set /etc/nova/nova.conf keystone_authtoken auth_protocol http
+ openstack-config --set /etc/nova/nova.conf keystone_authtoken auth_version v2.0
+ openstack-config --set /etc/nova/nova.conf keystone_authtoken admin_user admin
+ openstack-config --set /etc/nova/nova.conf keystone_authtoken admin_tenant_name admin
+ openstack-config --set /etc/nova/nova.conf keystone_authtoken admin_password openstack
+ openstack-config --set /etc/nova/nova.conf DEFAULT enabled_apis ec2,osapi_compute,metadata
+ openstack-config --set /etc/nova/nova.conf DEFAULT firewall_driver nova.virt.firewall.NoopFirewallDriver
+ openstack-config --set /etc/nova/nova.conf DEFAULT network_manager nova.network.neutron.manager.NeutronManager
  openstack-config --set /etc/nova/nova.conf DEFAULT service_neutron_metadata_proxy True;
  openstack-config --set /etc/nova/nova.conf DEFAULT neutron_metadata_proxy_shared_secret awcloud;
  openstack-config --set /etc/nova/nova.conf DEFAULT network_api_class nova.network.neutronv2.api.API;
@@ -710,6 +710,7 @@
 
 * 日志文件存放在::
 
+  horizon: /var/log/horizon /var/log/httpd
   nova: /var/log/nova
   glance:/var/log/glance
   neutron:/var/log/neutron
