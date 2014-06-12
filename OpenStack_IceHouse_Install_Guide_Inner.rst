@@ -162,7 +162,7 @@
 建立新的repo文件::
  
  rm /etc/yum.repos.d/centos65.repo
- cat > /etc/yum.repo.d/centos65.repo<< EOF
+ cat > /etc/yum.repos.d/centos65.repo<< EOF
  [base]
  name=Base
  baseurl=http://192.168.138.77/centos65
