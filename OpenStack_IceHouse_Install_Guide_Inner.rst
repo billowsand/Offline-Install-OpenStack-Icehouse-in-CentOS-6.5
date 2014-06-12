@@ -135,7 +135,7 @@
 
 建立本地源::
 
- cat > /etc/yum.repo.d/centos65.repo<< EOF
+ cat > /etc/yum.repos.d/centos65.repo<< EOF
  [base]
  name=Base
  baseurl=file:///root/openstack_centos/centos65
@@ -161,7 +161,7 @@
 
 建立新的repo文件::
  
- rm /etc/yum.repo.d/centos65.repo
+ rm /etc/yum.repos.d/centos65.repo
  cat > /etc/yum.repo.d/centos65.repo<< EOF
  [base]
  name=Base
@@ -171,7 +171,7 @@
  gpgkey=http://192.168.138.77/centos65/RPM-GPG-KEY-CentOS-6
  EOF
 
- cat > /etc/yum.repo.d/epel.repo<< EOF
+ cat > /etc/yum.repos.d/epel.repo<< EOF
  [epel]
  name=epel
  baseurl=http://192.168.138.77/epel-depends
@@ -179,7 +179,7 @@
  gpgcheck=0
  EOF
 
- cat > /etc/yum.repo.d/rabbitmq.repo<< EOF
+ cat > /etc/yum.repos.d/rabbitmq.repo<< EOF
  [rabbitmq]
  name=rabbitmq
  baseurl=http://192.168.138.77/rabbitmq
@@ -187,7 +187,7 @@
  gpgcheck=0
  EOF
 
- cat > /etc/yum.repo.d/icehouse.repo<< EOF
+ cat > /etc/yum.repos.d/icehouse.repo<< EOF
  [openstack-icehouse]
  name=openstack-icehouse
  baseurl=http://192.168.137.66/openstack-icehouse
