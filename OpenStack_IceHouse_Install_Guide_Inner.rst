@@ -135,6 +135,7 @@
 
 建立本地源::
 
+ rm /etc/yum.repos.d/*
  cat > /etc/yum.repos.d/centos65.repo<< EOF
  [base]
  name=Base
