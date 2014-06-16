@@ -720,3 +720,9 @@
   修改nova.conf文件
   vif_plugging_timeout=10
   vif_plugging_is_fatal=False
+
+* libvrit无法连通，重启massagebus服务::
+
+  service massagebus restart
+
+
